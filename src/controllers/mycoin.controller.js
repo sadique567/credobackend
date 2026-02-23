@@ -29,7 +29,7 @@ export const getAllCoin = async (req, res) => {
       data,
     });
   } catch (err) {
-    res.status(500).json({
+    res.status(400).json({
       status: false,
       message: err.message,
     });

@@ -7,6 +7,11 @@ import {
   cryptoregister,
 } from "../controllers/cryptoAuth.controller.js";
 
+import {
+  addCryptoWithAddress,
+  getCryptowithAddress,
+} from "../controllers/cryptowithAddress.controllers.js";
+
 const router = express.Router();
 
 router.post("/register", register);
@@ -14,9 +19,9 @@ router.post("/register", register);
 router.post("/login", login);
 router.post("/crypto/register", cryptoregister);
 router.post("/crypto/login", cryptoLogin);
-
 router.post("/add-coin", addCryptoCoin);
-
 router.get("/get-all-coin", getAllCoin);
+router.post("/add-cryptowithaddress", addCryptoWithAddress);
+router.get("/get-cryptowithaddress", getCryptowithAddress);
 
 export default router;
