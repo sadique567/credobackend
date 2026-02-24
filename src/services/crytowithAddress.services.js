@@ -1,16 +1,16 @@
 import CrytowithAddress from "../models/cryptoWithAddress.model.js";
 
 const addCryptoWithAddress = async (body) => {
-  const { cryptoName, cryptoAddress } = body;
+  const { symbol, cryptoAddress } = body;
   const cryptoWithAddressExist = await CrytowithAddress.findOne({
-    cryptoName,
+    symbol,
     cryptoAddress,
   });
   if (cryptoWithAddressExist) {
     throw new Error("This Coin Already Added");
   }
   const MyCreotiWithAddress =await CrytowithAddress.create({
-    cryptoName,
+    symbol,
     cryptoAddress,
   });
   return MyCreotiWithAddress;
