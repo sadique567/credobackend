@@ -49,11 +49,11 @@ const cryptowithAddress = new mongoose.Schema({
   },
   // ----above model from mycoin.model.js
 
-  cryptoName: {
-    type: String,
-    required: true,
-    unique: true,
-  },
+  // cryptoName: {
+  //   type: String,
+  //   required: true,
+  //   unique: true,
+  // },
   cryptoAddress: {
     type: String,
     required: true,
