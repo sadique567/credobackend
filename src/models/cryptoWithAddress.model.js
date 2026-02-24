@@ -62,3 +62,20 @@ const cryptowithAddress = new mongoose.Schema({
 });
 
 export default mongoose.model("CryptowithAddress", cryptowithAddress);
+/*
+
+{
+  "id": "dogecoin",
+  "chain": "DOGE",
+  "symbol": "DOGE",
+  "name": "Dogecoin",
+  "contract": null,
+  "decimals": 8,
+  "coingecko_id": "dogecoin",
+  "enabled_by_default": false,
+  "cryptoName": "Dogecoin Wallet",
+  "cryptoAddress": "D8B9wFxxxxxxxxxxxxxxxxxx"
+}
+
+
+*/

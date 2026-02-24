@@ -41,7 +41,30 @@ const getAllCoin = async () => {
   return coins;
 };
 
+const updateCoinStatus = async (body) => {
+
+  // console.log("BODY:", body);
+
+  const coin = await Mycoin.findOneAndUpdate(
+    { symbol: body.symbol.toUpperCase() },
+    { $set: { enabled_by_default: body.enabled_by_default } },
+    { returnDocument: "after" }
+  );
+
+  // console.log("UPDATED:", coin);
+
+  if (!coin) {
+    throw new Error("Coin not found");
+  }
+
+  return coin;
+};
+
+
+
+
 export default {
   addCryptoCoin,
   getAllCoin,
+  updateCoinStatus,
 };

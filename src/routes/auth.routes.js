@@ -1,7 +1,11 @@
 import express from "express";
 
 import { register, login } from "../controllers/auth.controller.js";
-import { addCryptoCoin, getAllCoin } from "../controllers/mycoin.controller.js";
+import {
+  addCryptoCoin,
+  getAllCoin,
+  updateCoinStatus,
+} from "../controllers/mycoin.controller.js";
 import {
   cryptoLogin,
   cryptoregister,
@@ -21,6 +25,7 @@ router.post("/crypto/register", cryptoregister);
 router.post("/crypto/login", cryptoLogin);
 router.post("/add-coin", addCryptoCoin);
 router.get("/get-all-coin", getAllCoin);
+router.post("/update-coin", updateCoinStatus);
 router.post("/add-cryptowithaddress", addCryptoWithAddress);
 router.get("/get-cryptowithaddress", getCryptowithAddress);
 
