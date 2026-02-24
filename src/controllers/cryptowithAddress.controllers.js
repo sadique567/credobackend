@@ -3,13 +3,13 @@ export const addCryptoWithAddress = async (req, res) => {
   try {
     const data = await cryptowithAddresServices.addCryptoWithAddress(req.body);
     res.json({
-      status: true,
+      status: "success",
       message: "Coin Added Successfully",
       data,
     });
   } catch (e) {
     res.status(400).json({
-      status: false,
+      status: "Failed",
       message: e.message,
     });
   }

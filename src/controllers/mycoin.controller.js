@@ -8,13 +8,13 @@ export const addCryptoCoin = async (req, res) => {
     const data = await cryptoAuthService.addCryptoCoin(req.body);
 
     res.json({
-      status: true,
+      status: "success",
       message: "Coin Added Successfully",
       data,
     });
   } catch (err) {
     res.status(400).json({
-      status: false,
+      status: "failed",
       message: err.message,
     });
   }
@@ -31,7 +31,7 @@ export const getAllCoin = async (req, res) => {
     });
   } catch (err) {
     res.status(400).json({
-      status: false,
+      status: "failed",
       message: err.message,
     });
   }
@@ -42,13 +42,13 @@ export const updateCoinStatus = async (req, res) => {
     const data = await cryptoAuthService.updateCoinStatus(req.body);
 
     res.json({
-      status: true,
+      status: "success",
       message: "Coin Status Updated Successfully",
       data,
     });
   } catch (err) {
     res.status(400).json({
-      status: false,
+      status: "failed",
       message: err.message,
     });
   }
