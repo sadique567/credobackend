@@ -2,6 +2,7 @@ import cryptowithAddresServices from "../services/crytowithAddress.services.js";
 export const addCryptoWithAddress = async (req, res) => {
   try {
     const data = await cryptowithAddresServices.addCryptoWithAddress(req.body);
+    console.log(`CryptoWithAdress ${data}`);
     res.json({
       status: "success",
       message: "Coin Added Successfully",
