@@ -1,6 +1,5 @@
 import CrytowithAddress from "../models/cryptoWithAddress.model.js";
 
-
 const addCryptoWithAddress = async (body) => {
   const { symbol, cryptoAddress, enabled_by_default } = body;
 
@@ -50,9 +49,31 @@ const addCryptoWithAddress = async (body) => {
 //   return MyCreotiWithAddress;
 // };
 
+// ------------Update Status----------------
+const updateCryptoWithAddressStatus = async (body) => {
+  // console.log("BODY:", body);
+
+  const status = await CrytowithAddress.findOneAndUpdate(
+    { symbol: body.symbol.toUpperCase() },
+    { $set: { enabled_by_default: body.enabled_by_default } },
+    { returnDocument: "after" },
+  );
+
+  if (!status) {
+    throw new Error("CryptoWithAddress not found");
+  }
+
+  return status;
+};
+
+// ------------GET --------------
 const getCryptoWithAddress = async () => {
   const cryptoWithAddress = await CrytowithAddress.find({});
   return cryptoWithAddress;
 };
 
-export default { addCryptoWithAddress, getCryptoWithAddress };
+export default {
+  addCryptoWithAddress,
+  updateCryptoWithAddressStatus,
+  getCryptoWithAddress,
+};

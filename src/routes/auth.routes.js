@@ -14,6 +14,7 @@ import {
 import {
   addCryptoWithAddress,
   getCryptowithAddress,
+  updateCryptoWithAddressStatus,
 } from "../controllers/cryptowithAddress.controllers.js";
 
 const router = express.Router();
@@ -27,6 +28,7 @@ router.post("/add-coin", addCryptoCoin);
 router.get("/get-all-coin", getAllCoin);
 router.post("/update-coin", updateCoinStatus);
 router.post("/add-cryptowithaddress", addCryptoWithAddress);
+router.post("/update-cryptowithaddress", updateCryptoWithAddressStatus);
 router.get("/get-cryptowithaddress", getCryptowithAddress);
 
 export default router;

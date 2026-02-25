@@ -31,3 +31,22 @@ export const getCryptowithAddress = async (req, res) => {
     });
   }
 };
+
+export const updateCryptoWithAddressStatus = async (req, res) => {
+  try {
+    const data = await cryptowithAddresServices.updateCryptoWithAddressStatus(
+      req.body,
+    );
+
+    res.json({
+      status: "success",
+      message: "Coin Status Updated Successfully",
+      data,
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: "failed",
+      message: err.message,
+    });
+  }
+};
