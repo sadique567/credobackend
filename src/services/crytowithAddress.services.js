@@ -14,7 +14,7 @@ const addCryptoWithAddress = async (body) => {
 
   // 🔥 Check if address already exists (optional but recommended)
   const addressExist = await CrytowithAddress.findOne({
-    cryptoAddress,
+    symbol,
   });
 
   if (addressExist) {
